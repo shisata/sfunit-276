@@ -239,7 +239,8 @@ const fs = require('fs');
 var app = express();
 var server = http.Server(app);
 app.set('port', 5000);
-const PORT = process.env.PORT || 5000
+// const PORT = process.env.PORT || 5000
+const PORT = 8080
 var io = socketIO(server);
 //database
 const { Pool } = require('pg')
@@ -258,7 +259,7 @@ app.get('/', function(request, response) {
 });// Starts the server.
 //
 server.listen(PORT, function() {
-console.log('Starting server on port 5000');
+console.log('Starting server on port ', PORT);
 });
 
 //setting up default viewpath to views folder
